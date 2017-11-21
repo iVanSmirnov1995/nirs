@@ -29,9 +29,9 @@ geometry // Load in STL files here
     cylinder
     {
         type searchableCylinder;
-        point1 (0.373 0 -0.15);
-        point2 (0.373 0 0);
-    radius 0.04;
+        point1 (-0.2 0 0);
+        point2 ( 1.4 0 0);
+    radius 0.3;
     }
 
 };
@@ -42,7 +42,7 @@ castellatedMeshControls
     maxGlobalCells 2000000; //max cells to use before mesh deletion step
     minRefinementCells 10;  //was 0 - zero means no bad cells are allowed during refinement stages
     maxLoadUnbalance 0.10;
-    nCellsBetweenLevels 1;  // expansion factor between each high & low refinement zone
+    nCellsBetweenLevels 2;  // expansion factor between each high & low refinement zone
 
     // Explicit feature edge refinement
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,11 +65,11 @@ castellatedMeshControls
 
     refinementRegions
     {
-        // cylinder
-        // {
-        //     mode inside;
-        //     levels ((4 4));
-        // }
+        cylinder
+        {
+            mode inside;
+            levels ((3 3));
+        }
         // kobraFull
         // {
         //    mode distance;
