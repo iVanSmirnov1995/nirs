@@ -23,8 +23,8 @@ addLayers       true;   // decide to add viscous layers ?
 geometry // Load in STL files here
 {
 	nozzle.stl {type triSurfaceMesh; name nozzle;}
-	kobra.stl {type triSurfaceMesh; name kobra;}
-	kobraFull.stl {type triSurfaceMesh; name kobraFull;}
+	kobraFull.stl {type triSurfaceMesh; name kobra;}
+	//kobraFull.stl {type triSurfaceMesh; name kobraFull;}
 	//refinementBox {type searchableBox; min (-0.1 -0.1 -0.05); max ( 0.1 0.1 0.05);}
     cylinder
     {
@@ -49,8 +49,8 @@ castellatedMeshControls
 
     features // taken from STL from each .eMesh file created by "SurfaceFeatureExtract" command
     (
-        {file "kobra.eMesh"; level 5;} 
-        {file "nozzle.eMesh"; level 7;} 
+        {file "kobra.eMesh"; level 8;} 
+       // {file "nozzle.eMesh"; level 7;} 
     );
 
     // Surface based refinement
@@ -58,23 +58,23 @@ castellatedMeshControls
 
     refinementSurfaces // Surface-wise min and max refinement level
     {
-	nozzle {level (0 0);} // was 4 4
-	kobra {level (4 4);}
+	//nozzle {level (0 0);} // was 4 4
+	kobra {level (5 5);}
  // was 4 4
     }  
 
     refinementRegions
     {
-        cylinder
-        {
-            mode inside;
-            levels ((4 4));
-        }
-        kobraFull
-        {
-           mode distance;
-           levels ((0.001 4) (0.003 3) (0.01 2)); 
-        }
+        // cylinder
+        // {
+        //     mode inside;
+        //     levels ((4 4));
+        // }
+        // kobraFull
+        // {
+        //    mode distance;
+        //    levels ((0.001 4) (0.003 3) (0.01 2)); 
+        // }
 
     }
 
